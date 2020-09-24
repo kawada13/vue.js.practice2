@@ -1,13 +1,21 @@
 <template>
-  <p>いいね({{numnber}})</p>
+  <div>
+    <p>いいね({{number}})</p>
+    <button @click="increment">+1</button>
+  </div>
 </template>
 
 <script>
 export default {
-  data: () => {
+  data:function() {
     return {
-      numnber: 32,
+      number: 32,
     };
+  },
+  methods: {
+    increment:function(){
+      this.number += 1;
+    },
   },
 };
 </script>
