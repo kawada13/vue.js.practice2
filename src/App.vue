@@ -20,25 +20,28 @@
     <hr />
 
     <p>これより下で学習</p>
-    <Poyo>
-      
-    </Poyo>
+    <button @click="currentComponent = 'Home'">HOME</button>
+    <button @click="currentComponent = 'About'">ABOUT</button>
+    <component :is="currentComponent"></component>
   </div>
 </template>
 
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
-import Poyo from "./components/Poyo.vue";
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
 
 export default {
   components: {
     LikeHeader: LikeHeader,
-    Poyo: Poyo,
+    Home: Home,
+    About: About
   },
   data: function () {
     return {
       age: 6,
       number: 8,
+      currentComponent: 'Home'
     };
   },
 };
