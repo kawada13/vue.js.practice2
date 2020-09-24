@@ -4,8 +4,9 @@
     <hr>
     <p>ブログの内容</p>
     <hr>
-    <LikeNumber :age="age"></LikeNumber>
-    <LikeNumber></LikeNumber>
+    <LikeNumber :age="age" @my-click="number = $event"></LikeNumber>
+    <hr>
+    <p>{{number}}</p>
   </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
   },
   data: function() {
     return {
-      age: 6
+      age: 6,
+      number: 8
     }
   }
 };
