@@ -23,6 +23,24 @@
     <button @click="currentComponent = 'Home'">HOME</button>
     <button @click="currentComponent = 'About'">ABOUT</button>
     <component :is="currentComponent"></component>
+    <hr>
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="title">タイトル</label>
+      <input 
+        type="text" 
+        id="title"
+        v-model.lazy="evettDate.title"
+        >
+        <p>{{evettDate.title}}</p>
+      <label for="maxNumber">最大人数</label>
+      <input 
+        type="number" 
+        id="maxNumber"
+        v-model.number="evettDate.maxNumber"
+        >
+        <p>{{evettDate.maxNumber}}</p>
+    </div>
   </div>
 </template>
 
@@ -41,7 +59,11 @@ export default {
     return {
       age: 6,
       number: 8,
-      currentComponent: 'Home'
+      currentComponent: 'Home',
+      evettDate: {
+        title: 'タイトル',
+        maxNumber: 0
+      }
     };
   },
 };
